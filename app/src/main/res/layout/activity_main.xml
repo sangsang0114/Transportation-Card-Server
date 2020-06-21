@@ -1,4 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
+
 <androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
@@ -6,13 +7,204 @@
     android:layout_height="match_parent"
     tools:context=".MainActivity">
 
-    <TextView
+    <Button
+        android:id="@+id/btnBluetoothOn"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Hello World!"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintLeft_toLeftOf="parent"
-        app:layout_constraintRight_toRightOf="parent"
+        android:layout_marginStart="30dp"
+        android:layout_marginLeft="30dp"
+        android:layout_marginTop="30dp"
+        android:text="블루투스 ON"
+        app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
+
+    <Button
+        android:id="@+id/btnBluetoothOff"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="8dp"
+        android:layout_marginLeft="8dp"
+        android:text="블루투스 OFF"
+        app:layout_constraintStart_toEndOf="@+id/btnBluetoothOn"
+        app:layout_constraintTop_toTopOf="@+id/btnBluetoothOn" />
+
+    <TextView
+        android:id="@+id/tvBluetoothStatus"
+        android:layout_width="170dp"
+        android:layout_height="20dp"
+        android:layout_marginTop="10dp"
+        android:text="status"
+        app:layout_constraintStart_toStartOf="@+id/btnBluetoothOn"
+        app:layout_constraintTop_toBottomOf="@+id/btnBluetoothOn" />
+
+    <Button
+        android:id="@+id/btnConnect"
+        android:layout_width="wrap_content"
+        android:layout_height="0dp"
+        android:layout_marginTop="10dp"
+        android:text="연결하기"
+        app:layout_constraintStart_toStartOf="@+id/tvBluetoothStatus"
+        app:layout_constraintTop_toBottomOf="@+id/tvBluetoothStatus" />
+
+    <TextView
+        android:id="@+id/tvReceiveData"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="10dp"
+        android:text="Receive"
+        app:layout_constraintStart_toStartOf="@+id/btnSendData"
+        app:layout_constraintTop_toBottomOf="@+id/btnSendData" />
+
+    <Button
+        android:id="@+id/btnSendData"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="10dp"
+        android:text="전송"
+        app:layout_constraintStart_toStartOf="@+id/btnConnect"
+        app:layout_constraintTop_toBottomOf="@+id/btnConnect" />
+
+    <EditText
+        android:id="@+id/tvSendData"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="8dp"
+        android:layout_marginLeft="8dp"
+        android:ems="10"
+        android:inputType="textPersonName"
+        android:text="Send Data"
+        app:layout_constraintStart_toEndOf="@+id/btnSendData"
+        app:layout_constraintTop_toTopOf="@+id/btnSendData" />
+
+    <Button
+        android:id="@+id/createBtn"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="테이블 생성"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/tvReceiveData" />
+
+    <Button
+        android:id="@+id/set"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="DB로드"
+        app:layout_constraintLeft_toRightOf="@id/createBtn"
+        app:layout_constraintTop_toBottomOf="@id/tvReceiveData" />
+
+    <Button
+        android:id="@+id/redbus"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="광역버스"
+        app:layout_constraintLeft_toRightOf="@id/set"
+        app:layout_constraintTop_toBottomOf="@id/tvReceiveData" />
+
+    <Button
+        android:id="@+id/bluebus"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="간선버스"
+        app:layout_constraintLeft_toRightOf="@id/redbus"
+        app:layout_constraintTop_toBottomOf="@id/tvReceiveData" />
+
+    <Button
+        android:id="@+id/s1"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="서정마을"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/redbus" />
+
+    <Button
+        android:id="@+id/s2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="상암동"
+        app:layout_constraintLeft_toRightOf="@id/s1"
+        app:layout_constraintTop_toBottomOf="@id/redbus" />
+
+    <Button
+        android:id="@+id/s3"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="신금호역"
+        app:layout_constraintLeft_toRightOf="@id/s2"
+        app:layout_constraintTop_toBottomOf="@id/redbus" />
+
+    <Button
+        android:id="@+id/s4"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="연서시장"
+        app:layout_constraintLeft_toRightOf="@id/s3"
+        app:layout_constraintTop_toBottomOf="@id/redbus" />
+
+    <Button
+        android:id="@+id/s5"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="구파발"
+        app:layout_constraintLeft_toRightOf="@id/s4"
+        app:layout_constraintTop_toBottomOf="@id/redbus" />
+
+    <Button
+        android:id="@+id/s6"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="정릉동"
+        app:layout_constraintLeft_toRightOf="@id/s5"
+        app:layout_constraintTop_toBottomOf="@id/redbus" />
+
+    <Button
+        android:id="@+id/s7"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="혜화동"
+        app:layout_constraintLeft_toRightOf="@id/s6"
+        app:layout_constraintTop_toBottomOf="@id/redbus" />
+
+    <Button
+        android:id="@+id/s8"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="사당역"
+        app:layout_constraintLeft_toRightOf="@id/s7"
+        app:layout_constraintTop_toBottomOf="@id/redbus" />
+
+
+    <Button
+        android:id="@+id/greenbus"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="지선버스"
+        app:layout_constraintLeft_toRightOf="@id/bluebus"
+        app:layout_constraintTop_toBottomOf="@id/tvReceiveData" />
+
+    <Button
+        android:id="@+id/dataRefresh"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="데이터 조회하기"
+        app:layout_constraintTop_toBottomOf="@id/s6" />
+
+    <ScrollView
+        android:id="@+id/scrolltext"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        app:layout_constraintHeight_default="wrap"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/dataRefresh"
+        app:layout_constraintVertical_bias="0.0">
+
+        <TextView
+            android:id="@+id/dataText"
+            android:layout_width="wrap_content"
+            android:layout_height="0dp"
+            android:layout_gravity="top|start"
+            android:text="이곳에 데이터들이 나타나게 됩니다"
+            app:layout_constraintHeight_default="wrap"
+            app:layout_constraintTop_toBottomOf="@id/dataRefresh" />
+    </ScrollView>
 
 </androidx.constraintlayout.widget.ConstraintLayout>
